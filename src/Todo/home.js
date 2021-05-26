@@ -17,12 +17,12 @@ export default class Home extends Component {
       }
 
     componentDidMount() {
-        const config = {
+       /* const config = {
             headers: {
                 Authorization: 'Bearer '+ localStorage.getItem('token')
             }
-        };
-        API.get('users',config).then(
+        };*/
+        /*API.get('users',config).then(
             res => {
                 const persons = res.data;
                 this.setState({ persons });
@@ -30,7 +30,7 @@ export default class Home extends Component {
             err => {
                 console.log(err);
             }
-        );
+        );*/
     }
 
     render(){
