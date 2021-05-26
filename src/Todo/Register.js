@@ -36,11 +36,11 @@ export default class Register extends Component{
     
         API.post('users', user)
         .then(res => {
-            if(this.password === this.confirmPassword){
+          //  if(this.password === this.confirmPassword){
                 localStorage.setItem('token',res.user.token);
                 console.log(res);
                 console.log(res.data);
-            }   
+           // }   
             })
             .catch(err => {
                 console.log(err)
