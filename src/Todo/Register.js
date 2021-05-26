@@ -15,6 +15,7 @@ export default class Register extends Component{
         password:'',
         confirmPassword:'',
         checked:false,
+        err:''
       }
       
       handleCheck = event => {
@@ -33,12 +34,25 @@ export default class Register extends Component{
             confirmPassword: this.confirmPassword
         };
     
+        API.post('users', user)
+        .then(res => {
+                localStorage.setItem('token',res.user.token);
+                console.log(res);
+                console.log(res.data);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+/*
         API.post(`users`, { user })
           .then(res => {
-            console.log(res);
-            console.log(res.data);
+              if(this.password == this.confirmPassword){
+                console.log(res);
+                console.log(res.data);
+              }
           })
-      }
+        */
+       }
 
     render(){
         return(
