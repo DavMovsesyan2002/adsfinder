@@ -25,7 +25,7 @@ export default class Register extends Component{
           console.log(this.state.checked)
       }
 
-      handleSubmit = event => {
+    handleSubmit = event => {
         event.preventDefault();
     
         const user = {
@@ -36,13 +36,14 @@ export default class Register extends Component{
 
         API.post(`users`, { user })
           .then(res => {
-              if(this.password === this.confirmPassword){
-                console.log(res);
-                console.log(res.data);
-              }
+                if(this.password === this.confirmPassword){
+                    console.log('update');
+                    localStorage.setItem(this.email,JSON.stringify(user));
+                    console.log(res);
+                }
           })
-       }
-
+    }
+    
     render(){
         return(
             <form onSubmit={this.handleSubmit}>

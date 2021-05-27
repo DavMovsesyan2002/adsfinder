@@ -15,10 +15,19 @@ export default class Sign_in extends Component {
             password: this.password
         };
         API.post('users', data)
-        .then(res => {
-            
-                localStorage.setItem('token',res.data.token);
-                console.log(res);
+        .then(res => {  
+             for(let i=0; i<localStorage.length; i++) {
+                let key = localStorage.key(i);
+                if(key === this.email){
+                    const get_user = key;
+                    const g = JSON.parse(localStorage.getItem(localStorage.key(key)));
+                    const get_password =  g.password;
+                    if(get_password === this.password){
+                        console.log(get_user + " password - " + get_password);
+                    }
+                }
+                //alert(`${key}: ${localStorage.getItem(key)}`);
+              }
             })
             .catch(err => {
                 console.log(err)
