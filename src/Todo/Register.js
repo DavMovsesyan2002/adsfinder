@@ -33,7 +33,7 @@ export default class Register extends Component{
             password: this.password,
             confirmPassword: this.confirmPassword
         };
-
+        
         API.post(`users`, { user })
           .then(res => {
                 if(this.password === this.confirmPassword){
@@ -43,7 +43,7 @@ export default class Register extends Component{
                 }
           })
     }
-    
+
     render(){
         return(
             <form onSubmit={this.handleSubmit}>

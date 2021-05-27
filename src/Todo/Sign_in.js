@@ -5,7 +5,6 @@ import {
     NavLink,
   } from "react-router-dom";
 
-
 export default class Sign_in extends Component {
     handleSubmit = e => {
         e.preventDefault();
