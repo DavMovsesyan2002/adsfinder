@@ -33,27 +33,14 @@ export default class Register extends Component{
             password: this.password,
             confirmPassword: this.confirmPassword
         };
-    
-        API.post('users', user)
-        .then(res => {
-          //  if(this.password === this.confirmPassword){
-                localStorage.setItem('token',res.user.token);
-                console.log(res);
-                console.log(res.data);
-           // }   
-            })
-            .catch(err => {
-                console.log(err)
-            })
-/*
+
         API.post(`users`, { user })
           .then(res => {
-              if(this.password == this.confirmPassword){
+              if(this.password === this.confirmPassword){
                 console.log(res);
                 console.log(res.data);
               }
           })
-        */
        }
 
     render(){

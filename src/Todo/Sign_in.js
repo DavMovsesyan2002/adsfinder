@@ -19,7 +19,6 @@ export default class Sign_in extends Component {
             
                 localStorage.setItem('token',res.data.token);
                 console.log(res);
-                console.log(API.post('users', data));
             })
             .catch(err => {
                 console.log(err)
