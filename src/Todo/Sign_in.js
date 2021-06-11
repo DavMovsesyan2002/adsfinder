@@ -13,7 +13,7 @@ export default class Sign_in extends Component {
             email: this.email,
             password: this.password
         };
-        API.post('users', data)
+        API.post('/signIn', data)
         .then(res => {  
              for(let i=0; i<localStorage.length; i++) {
                 let key = localStorage.key(i);

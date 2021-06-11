@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL: `https://jsonplaceholder.typicode.com/` 
+    baseURL: `https://secure-badlands-92567.herokuapp.com/users`
   });
