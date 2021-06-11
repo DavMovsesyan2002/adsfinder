@@ -34,7 +34,7 @@ export default class Register extends Component{
             confirmPassword: this.confirmPassword
         };
         
-        API.post(`signUp`, { user })
+        API.post(`/signUp`, { user })
           .then(res => {
                 if(this.password === this.confirmPassword){
                     console.log('update');
